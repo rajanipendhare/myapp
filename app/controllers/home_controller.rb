@@ -6,4 +6,6 @@ class HomeController < ApplicationController
 	def dashboard
 	end
 
+	def SignUp
+	end
 end
