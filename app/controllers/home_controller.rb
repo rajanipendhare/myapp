@@ -8,4 +8,8 @@ class HomeController < ApplicationController
 
 	def SignUp
 	end
+
+	def table
+	end
+	
 end

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 	get 'home/dashboard'
 	get 'home/SignUp'
 	root 'home#index'
+	get 'home/table'
 end
