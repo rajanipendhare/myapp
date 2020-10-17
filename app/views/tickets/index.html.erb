@@ -1,0 +1,22 @@
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Status</th>
+			<th>Location</th>
+			<th>Project Name</th>
+		</tr>
+		<tbody>
+			<% @tickets.each do |ticket|%>
+				<tr>
+					<td><%=ticket.name%></td>
+					<td><%=ticket.description%></td>
+					<td><%=ticket.status%></td>
+					<td><%=ticket.location%></td>
+					<td><%=ticket.project_name%></td>
+				</tr>
+			<% end %> 
+		</tbody>
+	</thead>
+</table>
