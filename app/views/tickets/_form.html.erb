@@ -1,9 +1,15 @@
 <%=form_for @ticket do |f|%>
-  <%=f.text_field :name, placeholder: "name"%><br><br>
+  <%=f.text_field :project_name, placeholder: "project name"%><br><br>
+  <%=f.select :project_name, options_for_select([['Bsnl-wifi-testing','Bsnl-wifi-testing'],['Bsnl-uso-onm-int', 'Bsnl-uso-onm-int'],['Bsnl-uso-o&m', 'Bsnl-uso-o&m']])%><br><br>
+  <%=f.text_field :zone, placeholder:"Select zone"%><br><br>
+  <%=f.select :zone, options_for_select([['West', 'West'], ['Central', 'Central'],['South', 'South']])%><br><br>
+  <%=f.text_field :state, placeholder: "Enter state"%><br><br>
+  <%=f.text_field :district, placeholder: "Enter District"%><br><br>
   <%=f.text_field :description, placeholder: "description"%><br><br>
-  <%=f.select :status, options_for_select([['Open', 'open'], ['In Progress', 'in_progress'],['Close', 'close']])%><br><br>
   <%=f.text_field :location, placeholder: "location"%><br><br>
-  <%=f.text_field :project_name, placeholder: "project_name"%><br><br>
+  <%=f.text_field :component, placeholder: "component"%><br><br>
+  <%=f.text_field :status, placeholder: "Ticket status"%><br><br>
+  <%=f.select :status, options_for_select([['Open', 'open'], ['In Progress', 'in_progress'],['Close', 'close']])%><br><br>
   <%=f.submit class: "btn btn-primary"%>
   <%=link_to "Back", root_path%>
 <% end -%>

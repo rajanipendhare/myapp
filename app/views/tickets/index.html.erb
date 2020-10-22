@@ -1,20 +1,26 @@
 <table>
 	<thead>
 		<tr>
-			<th>Name</th>
+			<th>Project_Name</th>
+			<th>Zone</th>
+			<th>State</th>
+			<th>District</th>
 			<th>Description</th>
-			<th>Status</th>
 			<th>Location</th>
-			<th>Project Name</th>
+			<th>Component</th>
+			<th>Status</th>
 		</tr>
 		<tbody>
 			<% @tickets.each do |ticket|%>
 				<tr>
-					<td><%=ticket.name%></td>
-					<td><%=ticket.description%></td>
-					<td><%=ticket.status%></td>
-					<td><%=ticket.location%></td>
 					<td><%=ticket.project_name%></td>
+					<td><%=ticket.zone%></td>
+					<td><%=ticket.state%></td>
+					<td><%=ticket.district%></td>
+					<td><%=ticket.description%></td>
+					<td><%=ticket.location%></td>
+					<td><%=ticket.component%></td>
+					<td><%=ticket.status%></td>
 				</tr>
 			<% end %> 
 		</tbody>
