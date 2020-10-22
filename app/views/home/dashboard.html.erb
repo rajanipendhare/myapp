@@ -52,14 +52,14 @@ body {
         <div class="card">
           <h3>All Tickets</h3>
           <p><i class="fa fa-file-text-o" style="font-size:36px;color:red"></p></i>
-          <p>Total Tickets 201</p>
+          <p>Total Tickets <%= Ticket.count%></p>
         </div>
       </div>
   <div class="column">
     <div class="card">
       <h3>Open Tickets</h3>
       <p><i class="fa fa-file-text-o" style="font-size:36px;color:red"></i></p>
-      <p>0 tickets</p>
+      <p>Tickets <%= Ticket.where(status: 'open').count%></p>
     </div>
   </div>
   <div class="column">
@@ -73,9 +73,9 @@ body {
 <div class="row">
   <div class="column">
     <div class="card">
-      <h3>Pending Tickets</h3>
+      <h3>In Progress Tickets</h3>
       <p><i class="fa fa-file-text-o" style="font-size:36px;color:red"></p></i>
-      <p>4 tickets</p>
+      <p>Tickets <%= Ticket.where(status: 'in_progress').count%></p>
     </div>
   </div>
   <div class="column">
@@ -89,7 +89,7 @@ body {
     <div class="card">
       <h3>Closed Tickets</h3>
       <p><i class="fa fa-file-text-o" style="font-size:36px;color:red"></p></i>
-      <p>127 tickets</p>
+      <p>Tickets <%= Ticket.where(status: 'close').count%></p>
     </div>
   </div>
 </div><br>

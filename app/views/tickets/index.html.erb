@@ -1,26 +1,53 @@
+<style>
+	table {
+	  font-family: verdana, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%; height: 5%
+	}
+
+	td, th {
+	  border: 2px solid grey; color: black;
+	  text-align: center;
+	  padding: 5px;
+	}
+	tr:nth-child(odd) 
+	{
+	  background-color: #ffeedd;
+	}
+	tr:nth-child(even) {
+	  background-color: #eeffdd;
+	}
+</style>
+
+
 <table>
 	<thead>
 		<tr>
+			<th>Name</th>
 			<th>Project_Name</th>
 			<th>Zone</th>
 			<th>State</th>
 			<th>District</th>
-			<th>Description</th>
+			<th>Problem Description</th>
 			<th>Location</th>
 			<th>Component</th>
 			<th>Status</th>
+			<th colspan="2">Action</th>
 		</tr>
 		<tbody>
 			<% @tickets.each do |ticket|%>
 				<tr>
+					<td><%=ticket.name%></td>
 					<td><%=ticket.project_name%></td>
 					<td><%=ticket.zone%></td>
 					<td><%=ticket.state%></td>
 					<td><%=ticket.district%></td>
-					<td><%=ticket.description%></td>
+					<td><%=ticket.problem_description%></td>
 					<td><%=ticket.location%></td>
 					<td><%=ticket.component%></td>
 					<td><%=ticket.status%></td>
+					<td><%=link_to "Edit", edit_ticket_path(ticket)%></td>
+					<td><%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				</tr>
 			<% end %> 
 		</tbody>

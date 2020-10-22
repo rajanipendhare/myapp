@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-  before_action :find_ticket, only: %i[edit update]
+  before_action :find_ticket, only: %i[edit update destroy]
   before_action :build_ticket, only: %i[new create]
 
   def index
@@ -31,10 +31,15 @@ class TicketsController < ApplicationController
     end
   end
 
+  def destroy
+  	@ticket.destroy
+    redirect_to tickets_path
+  end
+
   private
 
   def find_ticket
-  @ticket = Ticket.find(params[:id])
+  	@ticket = Ticket.find(params[:id])
   end
 
   def build_ticket
@@ -42,6 +47,6 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:project_name, :zone, :state, :district, :location, :component, :description, :status)
+    params.require(:ticket).permit(:name, :project_name, :zone, :state, :district, :location, :component, :problem_description, :status)
   end
 end
