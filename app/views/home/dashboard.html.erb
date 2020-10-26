@@ -4,6 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 <style>
 * {
   box-sizing: border-box;
@@ -35,17 +37,17 @@ body {
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 5px;
   text-align: center;
   background-color: #ffddee;
 }
 </style>
 </head>
 <body>
-  <h3><%=link_to "New Ticket", new_ticket_path%></h3>
-  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onclick ="myFunction()"> SHOW ALL TICKETS </button><br>
-<div class="w3-panel w3-border-left w3-pale-red w3-border-red">
-  <h1 align="center">Dashboard View</h1><br>
+  <h3><%=link_to "New Ticket", tickets_path%></h3><h3 align="right">
+    <%=link_to "", logout_path, method: :delete, class: 'fas fa-power-off' %></h3>
+  <div class="w3-panel w3-border-left w3-pale-red w3-border-red">
+  <h4 align="center">Dashboard View</h4><br>
 </div>
   <div class="row">
       <div class="column">

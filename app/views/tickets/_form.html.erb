@@ -1,14 +1,14 @@
-<%=form_for @ticket do |f|%>
-	<br> Create New Ticket <br>
-  <%=f.text_field :name, placeholder: "Name"%><br><br>
-  <%=f.select :project_name, options_for_select([['Bsnl-wifi-testing','Bsnl-wifi-testing'],['Bsnl-uso-onm-int', 'Bsnl-uso-onm-int'],['Bsnl-uso-o&m', 'Bsnl-uso-o&m']])%><br><br>
-  <%=f.select :zone, options_for_select([['West', 'West'], ['Central', 'Central'],['South', 'South']])%><br><br>
-  <%=f.text_field :state, placeholder: "Enter state"%><br><br>
-  <%=f.text_field :district, placeholder: "Enter District"%><br><br>
-  <%=f.text_field :problem_description, placeholder: "Problem Description"%><br><br>
-  <%=f.text_field :location, placeholder: "Location"%><br><br>
-  <%=f.text_field :component, placeholder: "Component"%><br><br>
-  <%=f.select :status, options_for_select([['Open', 'open'], ['In Progress', 'in_progress'],['Close', 'close']])%><br><br>
+<%=form_for @ticket do |f|%><br>
+
+  Ticket Name :- <%=f.text_field :name, placeholder: "Name"%><br><br>
+  Project Name :- <%=f.select :project_name, options_for_select([['Bsnl-wifi-testing','Bsnl-wifi-testing'],['Bsnl-uso-onm-int', 'Bsnl-uso-onm-int'],['Bsnl-uso-o&m', 'Bsnl-uso-o&m']])%><br><br>
+  Zone :- <%=f.select :zone, options_for_select([['West', 'West'], ['Central', 'Central'],['South', 'South']])%><br><br>
+  State :- <%=f.collection_select :state, State.all, :id , :name%><br><br>
+  District :- <%=f.collection_select :district, District.all, :id , :name%><br><br>
+  Problem Description :- <%=f.text_field :problem_description, placeholder: "Problem Description"%><br><br>
+  Location :- <%=f.text_field :location, placeholder: "Location"%><br><br>
+  Component :- <%=f.text_field :component, placeholder: "Component"%><br><br>
+  Ticket Status :- <%=f.select :status, options_for_select([['Open', 'open'], ['In Progress', 'in_progress'],['Close', 'close']])%><br><br>
   <%=f.submit class: "btn btn-primary"%>
-  <%=link_to "Back", root_path%>
+  <%=link_to "Back", tickets_path%>
 <% end -%>
