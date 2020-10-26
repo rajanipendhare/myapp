@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_26_095402) do
+ActiveRecord::Schema.define(version: 2020_10_26_111345) do
 
   create_table "districts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -34,11 +34,10 @@ ActiveRecord::Schema.define(version: 2020_10_26_095402) do
     t.string "project_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "zone"
-    t.string "state"
-    t.string "district"
-    t.string "component"
-    t.text "problem_description"
+    t.bigint "state_id"
+    t.bigint "district_id"
+    t.index ["district_id"], name: "index_tickets_on_district_id"
+    t.index ["state_id"], name: "index_tickets_on_state_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|

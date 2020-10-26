@@ -26,12 +26,9 @@
 		<tr>
 			<th>Name</th>
 			<th>Project_Name</th>
-			<th>Zone</th>
 			<th>State</th>
 			<th>District</th>
-			<th>Problem Description</th>
 			<th>Location</th>
-			<th>Component</th>
 			<th>Status</th>
 			<th colspan="2"><%=link_to "New", new_ticket_path%></th>
 		</tr>
@@ -40,12 +37,9 @@
 				<tr>
 					<td><%=ticket.name%></td>
 					<td><%=ticket.project_name%></td>
-					<td><%=ticket.zone%></td>
-					<td><%=ticket.state%></td>
-					<td><%=ticket.district%></td>
-					<td><%=ticket.problem_description%></td>
+					<td><%=ticket.state.name%></td>
+					<td><%=ticket.district.name%></td>
 					<td><%=ticket.location%></td>
-					<td><%=ticket.component%></td>
 					<td><%=ticket.status%></td>
 					<td><%=link_to "Edit", edit_ticket_path(ticket)%></td>
 					<td><%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>

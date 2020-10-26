@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   # get 'tickets/index'
   # get 'tickets/new'
   # get 'tickets/edit'
-  resources :tickets
+  resources :tickets do
+    collection do
+      get 'collect_districts'
+    end
+  end
   post '/login', controller: :users, action: :login
   delete '/logout', controller: :users, action: :logout
   root 'users#new'

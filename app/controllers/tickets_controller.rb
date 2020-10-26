@@ -36,6 +36,19 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
+  def collect_districts
+    if params[:state_id].present?
+      @cities = State.find(params[:state_id]).districts
+    else
+      @cities = District.all
+    end
+    if request.xhr?
+      respond_to do |format|
+        format.json {render json: {cities: @cities}}
+      end
+    end
+  end
+
   private
 
   def find_ticket
@@ -47,6 +60,6 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:name, :project_name, :zone, :state, :district, :location, :component, :problem_description, :status)
+    params.require(:ticket).permit(:name, :project_name, :state_id, :district_id, :location, :status)
   end
 end
