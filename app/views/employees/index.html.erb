@@ -1,0 +1,57 @@
+<style>
+	table {
+	  font-family: verdana, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%; height: 5%
+	}
+
+	td, th {
+	  border: 2px solid grey; color: black;
+	  text-align: center;
+	  padding: 5px;
+	}
+	tr:nth-child(odd) 
+	{
+	  background-color: #ffeedd;
+	}
+	tr:nth-child(even) {
+	  background-color: #eeffdd;
+	}
+</style>
+
+<table>
+	<h3><%=link_to "Home", home_dashboard_path%></h3>
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Gender</th>
+			<th>Birth Date</th>
+			<th>Contact</th>
+			<th>State</th>
+			<th>District</th>
+			<th>Joining Date</th>
+			<th>Aadhar Number</th>
+			<th>Is Active</th>
+			<th colspan="2"><%=link_to "New", new_employee_path%></th>
+		</tr>
+		<tbody>
+			<% @employees.each do |employee|%>
+				<tr>
+					<td><%=employee.f_name%></td>
+					<td><%=employee.l_name%></td>
+					<td><%=employee.gender%></td>
+					<td><%=employee.birth_date%></td>
+					<td><%=employee.contact%></td>
+					<td><%=employee.state.name%></td>
+					<td><%=employee.district.name%></td>
+					<td><%=employee.joining_date%></td>
+					<td><%=employee.aadhar_number%></td>
+					<td><%=employee.is_active%></td>
+					<td><%=link_to "Edit", edit_employee_path(employee)%></td>
+					<td><%= link_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %> 
+		</tbody>
+	</thead>
+</table>

@@ -1,0 +1,18 @@
+<%=form_for @employee do |f|%>
+	First Name :- <%=f.text_field :f_name%><br>
+	Last Name :- <%=f.text_field :l_name%><br>
+	Select Gender :-
+					<%=f.radio_button :gender, "Male", class:"form-check-input"%>
+          <%=f.label :male, "Male", class: "form-check-label"%>
+          <%=f.radio_button :gender, "Female", class:"form-check-input"%>
+          <%=f.label :female, "Female", class: "form-check-label"%><br>
+  Date of Birth :- <%=f.date_field :birth_date%><br>
+  Contact :- <%=f.number_field :contact%><br>
+  State :- <%=f.collection_select :state_id, State.all, :id, :name%><br>
+  District :- <%=f.collection_select :district_id, District.all, :id, :name%><br>
+  Date of Joining :- <%=f.date_field :joining_date%><br>
+  Aadhar NUmber :- <%=f.number_field :aadhar_number%><br>
+  Is Active :- <%=f.check_box :is_active %><br>
+  <%=f.submit class: "btn btn-primary"%>
+  <%=link_to "Back", employees_path%>
+<%end%>
