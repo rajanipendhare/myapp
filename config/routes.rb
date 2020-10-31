@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 	# root 'home#index'
 	get 'home/dashboard'
 	get 'home/SignUp'
-	# root 'home#index'
+	get 'home/index'
 	get 'home/table'
 end
