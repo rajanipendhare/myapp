@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
+  resources :employees
   get 'users/new'
-  # get 'tickets/index'
-  # get 'tickets/new'
-  # get 'tickets/edit'
   resources :tickets
   post '/login', controller: :users, action: :login
   delete '/logout', controller: :users, action: :logout
